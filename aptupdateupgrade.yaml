@@ -1,6 +1,6 @@
 ---
 - name: Update and upgrade apt packages
-- hosts: 192.168.1.212
+- hosts: spsync
   become: true
 
   tasks:

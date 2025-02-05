@@ -1,6 +1,6 @@
 ---
 - name: Update and upgrade apt packages
-- hosts: SPSync
+- hosts: my_servers
   become: true
 
   tasks:

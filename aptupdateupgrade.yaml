@@ -1,6 +1,6 @@
 ---
 - name: Update and upgrade apt packages
-- hosts: my_servers
+- hosts: 192.168.1.212
   become: true
 
   tasks:

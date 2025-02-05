@@ -1,8 +1,21 @@
+---
 - name: Update and upgrade apt packages
   become: true
-  ansible.builtin.apt:
-    name: "*"
-    state: latest
-    upgrade: yes
-    update_cache: yes
-    cache_valid_time: 86400 #One day
+
+  tasks:
+    # Packages
+    - name: Only run "update_cache=yes" in case the current one is older than 3600 seconds
+      ansible.builtin.apt:
+        update_cache: true
+        cache_valid_time: 3600
+      tags:
+        - commons
+        - packages
+
+    - name: Update all packages (apt-get upgrade)
+      ansible.builtin.apt:
+        name: '*'
+        state: latest
+      tags:
+        - commons
+        - packages

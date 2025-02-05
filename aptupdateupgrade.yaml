@@ -1,6 +1,6 @@
 ---
 - name: Update and upgrade apt packages
-- hosts: webservers
+hosts: webservers
   become: true
 
   tasks:

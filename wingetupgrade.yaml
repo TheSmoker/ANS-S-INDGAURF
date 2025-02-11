@@ -1,11 +1,5 @@
-- name: Upgrade packages with winget
+- name: Run Winget upgrade
   hosts: all
   tasks:
-    - name: Run a command under PowerShell
-      ansible.windows.win_shell: |
-        winget upgrade --all
-      register: winget_output
-
-    - name: Show output
-      debug:
-        var: winget_output.stdout
+    - name: Upgrade packages
+      raw: winget upgrade --all

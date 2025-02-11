@@ -1,0 +1,9 @@
+---
+- hosts: all
+  become: true
+ 
+  tasks:
+    # Packages
+    - name: Run a command under Powershell
+      ansible.builtin.win_shell: winget upgrade --all
+    
